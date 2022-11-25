@@ -9,6 +9,8 @@ function App() {
 
   const conv = new Hsluv()
 
+  //TODO Implement a color picker for better visualisation
+
   const handleMessageChange = (event) => {
     // Listen for changes in the input field
     setHex(event.target.value)
