@@ -5,6 +5,7 @@ import './App.css'
 function App() {
   const [lightness, setLightness] = useState('')
   const [hex, setHex] = useState('ff79c6')
+  const [textColor, setTextColor] = useState('')
 
   const conv = new Hsluv()
 
@@ -20,6 +21,10 @@ function App() {
     // Function to calculate the lightness from a hex value
     conv.hex = `#${hex}`
     conv.hexToHsluv()
+
+    //Set the text color to be black or white
+    const calculatedTextColor = () => (conv.hsluv_l > 70 ? 'BLACK' : 'WHITE')
+    setTextColor(calculatedTextColor)
   }
 
   useEffect(() => {
@@ -48,12 +53,11 @@ function App() {
           height: 200,
           backgroundColor: `#${hex}`,
           border: '1px solid #000000',
-          color: 'white',
+          color: textColor,
         }}
       >
-        Text inside should be
+        Text inside should be {textColor}
       </div>
-      {/* <div>Accent color:{hex}</div> */}
     </div>
   )
 }
