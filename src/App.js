@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Hsluv } from 'hsluv'
+import './App.css'
 
 function App() {
+  const hex = '#37a8f8'
+
+  const convColor = new Hsluv()
+  convColor.hex = '#37a8f8'
+  convColor.hexToHsluv()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div>{`My hex color: ${hex}`}</div>
+      <div>{`HSLUV lightness :${convColor.hsluv_l}`}</div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
