@@ -4,6 +4,9 @@
   padding-top: 40px;
 }
 
+input {
+  font-size: 40px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
