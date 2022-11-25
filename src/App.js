@@ -4,24 +4,27 @@ import './App.css'
 
 function App() {
   const [lightness, setLightness] = useState('')
-  const [message, setMessage] = useState('ff79c6')
+  const [hex, setHex] = useState('ff79c6')
 
   const conv = new Hsluv()
 
   const handleMessageChange = (event) => {
-    setMessage(event.target.value)
+    // Listen for changes in the input field
+    setHex(event.target.value)
     calculateLightness(event.target.value)
     const num = Number(conv.hsluv_l).toFixed(1)
     setLightness(num)
   }
 
   const calculateLightness = (hex) => {
+    // Function to calculate the lightness from a hex value
     conv.hex = `#${hex}`
     conv.hexToHsluv()
   }
 
   useEffect(() => {
-    calculateLightness(message)
+    //Calculate lightness on page load
+    calculateLightness(hex)
     const num = Number(conv.hsluv_l).toFixed(1)
     setLightness(num)
   })
@@ -35,7 +38,7 @@ function App() {
           id='message'
           name='message'
           onChange={handleMessageChange}
-          value={message}
+          value={hex}
         />
       </div>
       <div>HSLUV lightness :{lightness}</div>
@@ -43,7 +46,7 @@ function App() {
         style={{
           width: 200,
           height: 200,
-          backgroundColor: `#${message}`,
+          backgroundColor: `#${hex}`,
           border: '1px solid #000000',
           color: 'white',
         }}
