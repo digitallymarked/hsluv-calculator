@@ -25,7 +25,7 @@ function App() {
     conv.hexToHsluv()
 
     //Set the text color to be black or white
-    const calculatedTextColor = () => (conv.hsluv_l > 70 ? 'BLACK' : 'WHITE')
+    const calculatedTextColor = () => (conv.hsluv_l > 67 ? 'BLACK' : 'WHITE')
     setTextColor(calculatedTextColor)
   }
 
