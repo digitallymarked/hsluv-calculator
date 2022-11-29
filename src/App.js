@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
   const [lightness, setLightness] = useState('')
-  const [hex, setHex] = useState('ff79c6')
+  const [hex, setHex] = useState('#ff79c6')
   const [textColor, setTextColor] = useState('')
 
   const conv = new Hsluv()
@@ -28,28 +28,28 @@ function App() {
     setLightness(num)
   })
 
-  const handleColorChange = (color, e) => {
+  const handleColorChange = (color) => {
     setHex(color.hex)
   }
 
   return (
     <div
-      className='App'
+      className='app'
       style={{
         backgroundColor: hex,
         color: textColor,
       }}
     >
+      <ChromePicker
+        color={hex}
+        disableAlpha={true}
+        onChange={handleColorChange}
+        className='picker'
+      />
       <div>
-        background color:
-        <ChromePicker
-          color={hex}
-          disableAlpha={true}
-          onChange={handleColorChange}
-        />
+        <div>HSLUV lightness :{lightness}</div>
+        Text inside should be {textColor}
       </div>
-      <div>HSLUV lightness :{lightness}</div>
-      <div>Text inside should be {textColor}</div>
     </div>
   )
 }
