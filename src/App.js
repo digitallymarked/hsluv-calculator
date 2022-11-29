@@ -1,5 +1,7 @@
 import { Hsluv } from 'hsluv'
 import { useState, useEffect } from 'react'
+import { ChromePicker } from 'react-color'
+
 import './App.css'
 
 function App() {
@@ -36,8 +38,18 @@ function App() {
     setLightness(num)
   })
 
+  const handleColorChange = (color, e) => {
+    setHex(color.hex)
+  }
+
   return (
     <div className='App'>
+      <ChromePicker
+        color={hex}
+        disableAlpha={true}
+        onChange={handleColorChange}
+        onChangeComplete={handleColorChange}
+      />
       <div>
         background color:
         <input
