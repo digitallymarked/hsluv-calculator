@@ -11,19 +11,9 @@ function App() {
 
   const conv = new Hsluv()
 
-  //TODO Implement a color picker for better visualisation
-
-  const handleMessageChange = (event) => {
-    // Listen for changes in the input field
-    setHex(event.target.value)
-    calculateLightness(event.target.value)
-    const num = Number(conv.hsluv_l).toFixed(1)
-    setLightness(num)
-  }
-
   const calculateLightness = (hex) => {
     // Function to calculate the lightness from a hex value
-    conv.hex = `#${hex}`
+    conv.hex = hex
     conv.hexToHsluv()
 
     //Set the text color to be black or white
@@ -43,35 +33,23 @@ function App() {
   }
 
   return (
-    <div className='App'>
-      <ChromePicker
-        color={hex}
-        disableAlpha={true}
-        onChange={handleColorChange}
-        onChangeComplete={handleColorChange}
-      />
+    <div
+      className='App'
+      style={{
+        backgroundColor: hex,
+        color: textColor,
+      }}
+    >
       <div>
         background color:
-        <input
-          type='text'
-          id='message'
-          name='message'
-          onChange={handleMessageChange}
-          value={hex}
+        <ChromePicker
+          color={hex}
+          disableAlpha={true}
+          onChange={handleColorChange}
         />
       </div>
       <div>HSLUV lightness :{lightness}</div>
-      <div
-        style={{
-          width: 200,
-          height: 200,
-          backgroundColor: `#${hex}`,
-          border: '1px solid #000000',
-          color: textColor,
-        }}
-      >
-        Text inside should be {textColor}
-      </div>
+      <div>Text inside should be {textColor}</div>
     </div>
   )
 }
