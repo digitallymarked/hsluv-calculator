@@ -2,6 +2,8 @@ import { Hsluv } from 'hsluv'
 import { useState, useEffect } from 'react'
 import { ChromePicker } from 'react-color'
 
+import Tag from './Tag'
+
 import './App.css'
 
 function App() {
@@ -47,8 +49,10 @@ function App() {
         className='picker'
       />
       <div>
-        <div>HSLUV lightness :{lightness}</div>
-        Text inside should be {textColor}
+        <div>
+          HSLUV lightness<Tag color={textColor}>{lightness}</Tag>
+        </div>
+        Text should be {textColor}
       </div>
     </div>
   )
