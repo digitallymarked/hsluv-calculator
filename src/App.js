@@ -48,10 +48,9 @@ function App() {
         onChange={handleColorChange}
         className='picker'
       />
-      <div>
-        <div>
-          HSLUV lightness<Tag color={textColor}>{lightness}</Tag>
-        </div>
+      <div className='results'>
+        HSLUV lightness<Tag color={textColor}>{lightness}</Tag>
+        <br />
         Text should be {textColor}
       </div>
     </div>
