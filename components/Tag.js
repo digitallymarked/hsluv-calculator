@@ -1,4 +1,4 @@
-function Tag({ children, color }) {
+export default function Tag({ children, color }) {
   return (
     <>
       {color === 'WHITE' ? (
@@ -33,5 +33,3 @@ function Tag({ children, color }) {
     </>
   )
 }
-
-export default Tag

@@ -1,4 +1,9 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -6,7 +11,7 @@ body {
   font-size: 24px;
   line-height: 150%;
 }
-#root {
+#__next {
   height: 100%;
   width: 100%;
 }
