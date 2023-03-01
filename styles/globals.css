@@ -35,10 +35,22 @@ h1 {
   margin: 0;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 24px;
+  line-height: 150%;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
 .results {
   background-color: #121212;
   color: hsla(0, 0%, 100%, 0.6);
   padding: 32px;
   border-radius: 12px;
   border: 1px solid hsla(0, 0%, 100%, 0.15);
+  max-width: 720px;
 }
