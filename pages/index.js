@@ -77,7 +77,7 @@ export default function Home() {
         />
         <div className='results'>
           <p>
-            Accent color <Mono>{hex}</Mono> has a{' '}
+            Accent color <Mono style={{ color: 'white' }}>{hex}</Mono> has a{' '}
             <ExternalLink href='https://www.hsluv.org/'>HSLuv</ExternalLink>{' '}
             lightness of <Tag>{lightness}</Tag>
           </p>
