@@ -41,6 +41,7 @@ export default function Home() {
 
   const handleColorChange = (color) => {
     setHex(color.hex)
+    accessibleLightness()
   }
 
   return (
