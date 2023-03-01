@@ -10,8 +10,8 @@ import Mono from '../components/Mono'
 import ExternalLink from '../components/ExternalLink'
 
 export default function Home() {
-  const [lightness, setLightness] = useState('68.8')
   const [hex, setHex] = useState('#FF79C6')
+  const [lightness, setLightness] = useState('68.8')
   const [headlineColor, setHeadlineColor] = useState('white')
   const [linkColor, setLinkColor] = useState('#FF79C6')
 
@@ -27,7 +27,6 @@ export default function Home() {
     conv.hex = hex
     conv.hexToHsluv()
 
-    Number(conv.hsluv_l).toFixed(1)
     setLightness(Number(conv.hsluv_l).toFixed(1))
   }
 
