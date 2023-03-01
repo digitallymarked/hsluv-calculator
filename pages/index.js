@@ -10,9 +10,10 @@ import Mono from '../components/Mono'
 import ExternalLink from '../components/ExternalLink'
 
 export default function Home() {
-  const [lightness, setLightness] = useState('')
-  const [hex, setHex] = useState('#ff79c6')
-  const [textColor, setTextColor] = useState('')
+  const [lightness, setLightness] = useState('68.8')
+  const [hex, setHex] = useState('#FF79C6')
+  const [textColor, setTextColor] = useState('white')
+  const [linkColor, setLinkColor] = useState('#FF79C6')
 
   const calculateLightness = () => {
     const conv = new Hsluv()
@@ -25,12 +26,18 @@ export default function Home() {
     setTextColor(calculatedTextColor)
   }
 
-  useEffect(() => {
-    //Calculate lightness on page load
-    calculateLightness(hex)
-    const num = Number(conv.hsluv_l).toFixed(1)
-    setLightness(num)
-  })
+  const accessibleLightness = () => {
+    const conv = new Hsluv()
+    conv.hex = hex
+    conv.hexToHsluv()
+
+    if (conv.hsluv_l <= 66) {
+      conv.hsluv_l = 67
+      conv.hsluvToHex()
+    }
+
+    setLinkColor(conv.hex)
+  }
 
   const handleColorChange = (color) => {
     setHex(color.hex)
