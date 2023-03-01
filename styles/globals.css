@@ -23,4 +23,5 @@ html {
   justify-content: center;
   gap: 24px;
   height: 100%;
+  padding: 8px;
 }
