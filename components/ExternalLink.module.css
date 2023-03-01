@@ -14,6 +14,10 @@ underline underline-offset-2 decoration-blue-500 hover:decoration-2 font-semibol
   font-weight: 600;
 }
 
+.link svg {
+  fill: hsla(0, 0%, 100%, 1);
+}
+
 .link:hover {
   text-decoration-color: hsla(208, 76%, 52%, 1);
 }

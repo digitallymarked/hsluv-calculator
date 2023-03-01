@@ -25,3 +25,17 @@ html {
   height: 100%;
   padding: 8px;
 }
+
+h1 {
+  font-size: 32px;
+  line-height: 120%;
+  margin: 0;
+}
+
+.results {
+  background-color: #121212;
+  color: hsla(0, 0%, 100%, 0.6);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+}
