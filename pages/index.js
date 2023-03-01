@@ -80,7 +80,10 @@ export default function Home() {
           <p>
             Accent color <Mono style={{ color: 'white' }}>{hex}</Mono> has a{' '}
             <ExternalLink href='https://www.hsluv.org/'>HSLuv</ExternalLink>{' '}
-            lightness of <Tag>{lightness}</Tag>
+            lightness of{' '}
+            <Tag>
+              <Mono>{lightness}</Mono>
+            </Tag>
           </p>
           <p>
             We then get the brand color, and if it{`'`}s above 67 lightness, we
