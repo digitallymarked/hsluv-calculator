@@ -98,7 +98,7 @@ export default function Home() {
             <p>
               If the accent color has a lightness below 67, we change it to 67,
               if not — we leave it as is. Hue and Saturation stay constant since
-              the HSLuv space doesn't distort them.
+              the HSLuv space doesn&apos;t distort them.
             </p>
             <p>
               <TextLink color={linkColor}>
