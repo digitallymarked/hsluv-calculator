@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import { Hsluv } from 'hsluv'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ChromePicker } from 'react-color'
 
 import Tag from '../components/Tag'
